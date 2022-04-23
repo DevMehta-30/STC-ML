@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="prediction">
+        <h1>Heart Decision Prediction</h1>
+        <form action="{{ url_for('predict')}}"method="post">
+		<label for="BMI">BMI</label>
+		<input type="text" id="BMI" name="BMI" required="required">
+		<br>
+    		<label for="Smoking">Smoking</label>
+    		<select id="Smoking" name="Smoking" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+    		<br>
+    		<label for="Stroke">Stroke</label>
+    		<select id="Stroke" name="Stroke" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+            <br>
+            <label for="PhyscialHealth">Pyschical Health</label>
+		    <input type="text" id="PhyscialHealth" name="PhyscialHealth" required="required">
+            <br>
+            <label for="Mental Health">Mental Health</label>
+		    <input type="text" id="Mental Health" name="Mental Health" required="required">
+    		<br>
+            <label for="Diff Walking">Diff Walking</label>
+    		<select id="Diff Walking" name="Diff Walking" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+            <br>
+            <label for="Sex">Sex</label>
+    		<select id="Sex" name="Sex" required="required">
+      			<option value="0">Female</option>
+      			<option value="1">Male</option>
+    		</select>
+            <br>
+    		<label for="Age Category">Age Category</label>
+    		<select id="Age Category" name="Age Category" required="required">
+      			<option value="0">55-59</option>
+      			<option value="1">80 or older</option>
+      			<option value="2">65-69</option>
+      			<option value="3">75-79</option>
+      			<option value="4">40-44</option>
+      			<option value="5">70-74</option>
+                <option value="6">60-64</option>
+      			<option value="7">50-54</option>
+      			<option value="8">45-49</option>
+      			<option value="9">18-24</option>
+      			<option value="10">35-39</option>
+      			<option value="11">30-34</option>
+      			<option value="12">25-29</option>
+    		</select>
+    		<br>
+            <label for="Race">Race</label>
+    		<select id="Race" name="Race" required="required">
+      			<option value="0">White</option>
+      			<option value="1">Black</option>
+      			<option value="2">Asian</option>
+      			<option value="3">American Indian/Alaskan Native</option>
+      			<option value="4">Other</option>
+      			<option value="5">Hispanic</option>
+    		</select>
+    		<br>
+            <label for="Diabetic">Diabetic</label>
+            <select id="Diabetic" name="Diabetic" required="required">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+                <option value="2">No, borderline diabetes</option>
+                <option value="3">Yes (during pregnancy)</option>
+            </select>
+            <br>
+    		<label for="PhyscialActivity">PhyscialActivity</label>
+    		<select id="PhyscialActivity" name="PhyscialActivity" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+            <br>
+            <label for="Gen Health">Gen Health</label>
+    		<select id="Gen Health" name="Gen Health" required="required">
+      			<option value="0">Very good</option>
+      			<option value="1">Fair</option>
+      			<option value="2">Good</option>
+      			<option value="3">Poor</option>
+    		</select>
+            <br>
+            <label for="Sleep Time">Sleep Time</label>
+		    <input type="text" id="Sleep Time" name="Sleep Time" required="required">
+            <br>
+            <label for="Asthma">Asthma</label>
+    		<select id="Asthma" name="Asthma" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+            <br>
+            <label for="Kidney Disease">Kidney Disease</label>
+    		<select id="Kidney Disease" name="Kidney Disease" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+            <br>
+            <label for="SkinCancer">SkinCancer</label>
+    		<select id="SkinCancer" name="SkinCancer" required="required">
+      			<option value="0">No</option>
+      			<option value="1">Yes</option>
+    		</select>
+    		<br>
+        	<button type="submit" class=" btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+       <br>
+       <b>{{ prediction_text }}</b>
+    </div>
+</body>
+</html>
