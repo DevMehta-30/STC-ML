@@ -15,15 +15,15 @@ def predict():
     feat_list = request.form.to_dict()
     feat_list = list(feat_list.values())
     feat_list = list(map(int, feat_list))
-    feat_list = numpy.array(feat_list).reshape(1,16)
+    feat_list = numpy.array(feat_list).reshape(1,17)
     print("\n",feat_list)
     prediction = model.predict(feat_list)
     out  = prediction[0]
     if out == 0:
-        text = "<50"
+        text = "Yes"
     else:
-        text = ">50"
-    return render_template('index.html', prediction_text='Employee Salary is {}'.format(text))
+        text = "No"
+    return render_template('index.html', prediction_text='Heart Disease - {}'.format(text))
 
 if __name__ == '__main__':
     app.run(debug=True)
